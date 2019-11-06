@@ -1,10 +1,6 @@
 import React from 'react';
 import './App.css';
-import key1 from './sounds/key1.wav';
-
-const SOUNDKIT = [
-  {id: 'key1', name: 'Amen Break', src: key1},
-];
+import SOUNDKIT from './Sound';
 
 class Key extends React.Component {
   constructor (props) {
@@ -14,14 +10,15 @@ class Key extends React.Component {
 
   handleClick() {
     this.sound.play();
+    this.sound.volume = 0.25;
     this.sound.currentTime = 0;
   }
 
   render () {
     return (
-      <div className = {this.props.id} onClick = {this.handleClick}>
-        <h1>Amen Break</h1>
-        <audio id = {this.props.id} src = {this.props.soundsrc} ref = {ref => this.sound = ref}></audio>
+      <div className = {this.props.sound.id} onClick = {this.handleClick}>
+        <h1>{this.props.sound.kname}</h1>
+        <audio id = {this.props.sound.id} src = {this.props.sound.src} ref = {ref => this.sound = ref}></audio>
       </div>
     );
   }
@@ -32,7 +29,7 @@ class App extends React.Component {
     return (
       <div className = "App">
         {SOUNDKIT.map(sound => {
-          return (<Key kid = {sound.id} kname = {sound.name} soundsrc = {sound.src} />)
+          return (<Key sound = {sound} />)
         })}        
       </div>
     );
