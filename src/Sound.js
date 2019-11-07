@@ -6,12 +6,12 @@ import key5 from './sounds/key5.wav';
 import key6 from './sounds/key6.wav';
 
 const SOUNDKIT = [
-  {id: 'key', name: 'Amen Break', src: key1},
-  {id: 'key', name: 'Funky Break', src: key2},
-  {id: 'key', name: 'Leevee Break', src: key3},
-  {id: 'key', name: 'President Break', src: key4},
-  {id: 'key', name: 'Synthetic Break', src: key5},
-  {id: 'key', name: 'Skull Break', src: key6},
+  {id: '1', name: 'Amen Break', src: key1},
+  {id: '2', name: 'Funky Break', src: key2},
+  {id: '3', name: 'Leevee Break', src: key3},
+  {id: '4', name: 'President Break', src: key4},
+  {id: '5', name: 'Synthetic Break', src: key5},
+  {id: '6', name: 'Skull Break', src: key6},
 ];
 
 export default SOUNDKIT;

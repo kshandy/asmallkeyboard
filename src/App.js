@@ -16,8 +16,8 @@ class Key extends React.Component {
 
   render () {
     return (
-      <div className = {this.props.sound.id} onClick = {this.handleClick}>
-        <h1>{this.props.sound.kname}</h1>
+      <div className = {this.props.classname} onClick = {this.handleClick}>
+        <h1>{this.props.sound.id}</h1>
         <audio id = {this.props.sound.id} src = {this.props.sound.src} ref = {ref => this.sound = ref}></audio>
       </div>
     );
@@ -29,7 +29,7 @@ class App extends React.Component {
     return (
       <div className = "App">
         {SOUNDKIT.map(sound => {
-          return (<Key sound = {sound} />)
+          return (<Key sound = {sound} classname = "key"/>)
         })}        
       </div>
     );
